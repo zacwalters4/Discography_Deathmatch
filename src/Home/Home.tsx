@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import {formatSearch} from '../Utilities/Helper'
-import Search from '../Search/Search'
+import Search from '../SearchForm/SearchForm'
 
 const Home = () => {
 

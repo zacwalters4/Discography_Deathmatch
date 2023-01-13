@@ -1,16 +1,21 @@
 import React from 'react'
-import './Search.css'
-import {formatSearch} from '../Utilities/Helper'
+import './SearchForm.css'
+import { formatSearch } from '../Utilities/Helper'
+import getArtists from "../Utilities/APICalls"
 
 
 const Search = () => {
-    const [searchInput, getSearchInput] = React.useState("")
+    const [searchInput, getSearchInput] = React.useState('')
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearchInput(event.target.value)
     }
 
     const searchArtist = () => {
-        console.log(formatSearch(searchInput))
+        getArtists(searchInput)
+        .then(data => {   
+            console.log(data.results.artistmatches.artist);
+
+          })
     }
 
     return (
@@ -25,7 +30,7 @@ const Search = () => {
                 className="search-button"
                 onClick={searchArtist}
             >
-                Press
+                Search
             </button>
         </div>
 
