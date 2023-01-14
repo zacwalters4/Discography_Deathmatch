@@ -1,12 +1,17 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
         <div className="header-container">
-            <button>Home</button>
+            <Link to={`/`}>
+                <button className="header-button home-button">Home</button>
+            </Link>
             <h1>Discography Deathmatch</h1>
-            <button>Collection</button>
+            <Link to={`/collection`}>
+                <button className="header-button collection-button">Collection</button>
+            </Link>
         </div>
     )
   }

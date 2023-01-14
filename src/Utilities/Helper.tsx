@@ -1,7 +1,7 @@
 
 
-const formatSearch = (item: string) => {
-    return item.replace(/\s+/g, '_')
+const formatURL = (item: string) => {
+    return item.replace(/\s+/g, '%')
 }
 
-export {formatSearch}
+export {formatURL}

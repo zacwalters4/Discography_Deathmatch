@@ -4,6 +4,7 @@
     justify-content: space-between;
 }
 
-.header-container > button {
+.header-button {
     width: 10vw;
+    height: 8vh;
 }

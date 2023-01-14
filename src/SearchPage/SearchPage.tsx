@@ -1,17 +1,16 @@
 import React from 'react'
-import './Home.css'
+import './SearchPage.css'
 import Search from '../SearchForm/SearchForm'
 import Header from '../Header/Header'
 
-const Home = () => {
+const SearchPage = () => {
 
     return (
-        <div className="home-page">
+        <div className="search-page">
             <Header />
             <Search />
         </div>
     )
 }
 
-export default Home
-
+export default SearchPage
