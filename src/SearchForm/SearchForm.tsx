@@ -3,10 +3,14 @@ import './SearchForm.css'
 import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
 import getArtists from "../Utilities/APICalls"
+import Header from "../Header/Header"
 
 
 const Search = () => {
+
     const [searchInput, getSearchInput] = React.useState('')
+    const [searchResults, getSearchResults] = React.useState([])
+    
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearchInput(event.target.value)
     }
@@ -18,9 +22,9 @@ const Search = () => {
     const searchArtist = () => {
         getArtists(searchInput)
         .then(data => {   
-            console.log(data.results.artistmatches.artist);
+            getSearchResults({...data.results.artistmatches.artist})
           })
-          clearSearchInput()
+        clearSearchInput()
     }
 
     return (
@@ -32,14 +36,12 @@ const Search = () => {
                 value={searchInput}
                 onChange={handleChange}
             />
-            <Link to={`/search/${formatURL(searchInput)}`}>
                 <button
                     className="search-button"
                     onClick={searchArtist}
                 >
                     Search
                 </button>
-            </Link>
         </div>
 
     )
