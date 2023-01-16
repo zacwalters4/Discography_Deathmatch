@@ -8,6 +8,13 @@ const getArtists = (artist: string) => {
                     throw new Error('something went wrong')
                 }
             })
+            .then(data => {
+                const filteredResults = data.results.artistmatches.artist.map(item => {
+                    return {name: item.name, image: item.image[4]['#text']}
+                })
+                console.log(filteredResults)
+                return filteredResults
+            })
     )
 }
 

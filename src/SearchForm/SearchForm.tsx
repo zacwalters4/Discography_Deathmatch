@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
 import getArtists from "../Utilities/APICalls"
 import Header from "../Header/Header"
-
+import SearchResults from '../SearchResults/SearchResults'
 
 const Search = () => {
 
@@ -21,29 +21,31 @@ const Search = () => {
 
     const searchArtist = () => {
         getArtists(searchInput)
-        .then(data => {   
-            getSearchResults({...data.results.artistmatches.artist})
-          })
+            .then(data => {
+                getSearchResults(data)
+                // return data.results.artistmatches.artist
+            })
         clearSearchInput()
     }
-
     return (
-        <div className="search-form">
-            <input
-                className="search-input"
-                type="text"
-                placeholder="Search an Artist..."
-                value={searchInput}
-                onChange={handleChange}
-            />
+        <div className="search-container">
+            <div className="search-form">
+                <input
+                    className="search-input"
+                    type="text"
+                    placeholder="Search an Artist..."
+                    value={searchInput}
+                    onChange={handleChange}
+                />
                 <button
                     className="search-button"
                     onClick={searchArtist}
                 >
                     Search
                 </button>
+            </div>
+            {(!!searchResults.length) && <SearchResults searchResults={searchResults}/>}
         </div>
-
     )
 }
 
