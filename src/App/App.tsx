@@ -3,6 +3,7 @@ import './App.css'
 import Home from "../Home/Home"
 import { Routes, Route } from "react-router-dom"
 import SearchPage from "../SearchPage/SearchPage"
+import BattlePage from "../BattlePage/BattlePage"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<SearchPage />} />
         <Route path=":searchName" element={<SearchPage />} />
       </Route>
+      <Route path="/battle" element={<BattlePage />} />
     </Routes>
   )
 }
