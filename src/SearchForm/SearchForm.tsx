@@ -2,7 +2,7 @@ import React from 'react'
 import './SearchForm.css'
 import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
-import getArtists from "../Utilities/APICalls"
+import  { getArtists }  from "../Utilities/APICalls"
 import Header from "../Header/Header"
 import SearchResults from '../SearchResults/SearchResults'
 
@@ -22,8 +22,8 @@ const Search = () => {
     const searchArtist = () => {
         getArtists(searchInput)
             .then(data => {
+                console.log(data)
                 getSearchResults(data)
-                // return data.results.artistmatches.artist
             })
         clearSearchInput()
     }

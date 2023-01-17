@@ -3,13 +3,15 @@ import './BattlePage.css'
 import Search from '../SearchForm/SearchForm'
 import Header from '../Header/Header'
 import { useLocation } from "react-router-dom"
+import { formatName } from '../Utilities/Helper'
 
 const BattlePage = () => {
-    const location = useLocation()
-    console.log(location)
+    const locationData = useLocation()
+    const artistName = formatName(locationData.search)
+    console.log(artistName)
     return (
         <div className="battle-page">
-            <h1>hi</h1>
+            <Header />
 
         </div>
     )

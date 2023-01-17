@@ -12,7 +12,7 @@ const SearchResults = ( { searchResults } ) => {
                 return (
                     <Link to={{
                         pathname: '/battle',
-                        search: `?${formatURL(artist.name)}`
+                        search: `${formatURL(artist.name)}`
                         }} 
                         key={index}>
                         <div 
