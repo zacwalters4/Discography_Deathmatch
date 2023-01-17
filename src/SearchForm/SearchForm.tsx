@@ -22,7 +22,6 @@ const Search = () => {
     const searchArtist = () => {
         getArtists(searchInput)
             .then(data => {
-                console.log(data)
                 getSearchResults(data)
             })
         clearSearchInput()
