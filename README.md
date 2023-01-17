@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Discography Deathmatch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="left">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+  <img src="https://img.shields.io/badge/Cypress.io-6e3596?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+</p>
 
-## Available Scripts
+## Abstract
 
-In the project directory, you can run:
+Discography Deathmatch is a TypeScript/React application designed to allow users to pit their favorite artist's albums against eachother to find their favorite album. A user can search for an artist, and is then presented with a battle screen of the artist's top 10 albums . Users can then select their prefered album out of the current 2 displayed, eliminating the other from the contest.
 
-### `npm start`
+## Project Goals and Objectives
+- Use the technology you’ve been working with over the course of the module to demonstrate mastery of React, Router, Asynchronous JavaScript, End to end testing with Cypress
+- Work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
+- Display the data from the API in a way that applies directly to your audience
+- Ability for users to store/manipulate the data displayed in the application, such as favoriting or adding to a list, searching, commenting, etc
+- Multiple views handled by Router
+- Be deployed using Heroku, Surge, or any other similar service
+  
+### Wins & Challenges
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Implemented TypeScript into a modern React web application—from planning to deployment—in one week
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Contributors
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Zac Walters](https://github.com/zacwalters4)
 
-### `npm run build`
+## Preview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- TypeScript
+- React
+- React Router
+- HTML6
+- Cypress
+- RESTful API
+- Postman
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Install
+  - Clone this repo to your machine.
+  - In the root directory of the project, run `npm install` on the command line.
+  - To start the server, run `npm start`.
+  - To run the test suite, run `npm run cypress` on the command line, and select `e2e` in Google Chrome when prompted by Cypress.
