@@ -1,0 +1,10 @@
+.header-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-button {
+    width: 15vw;
+    height: 8vh;
+}
