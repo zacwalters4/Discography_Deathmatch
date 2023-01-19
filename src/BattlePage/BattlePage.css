@@ -1,0 +1,79 @@
+.battle-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.battle-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+    margin-top: 10vh;
+    width: 100vw;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.5);
+    box-shadow: 1vh 1vh 1vh rgba(0, 0, 0, 0.7);
+    height: 50vh;
+    width: 30vw;
+
+}
+
+
+
+.album > img {
+    width: 40vh;
+    height: 40vh;
+
+}
+
+.album > p {
+    margin: 0;
+    font-size: 5vh;
+    text-align: center;
+}
+
+.album:hover {
+    transform: scale(1.2, 1.2);
+
+}
+
+.album[drop='1'] {
+    animation: drop 1s 1;
+}
+
+
+@keyframes drop {
+    50% {
+      transform: translate(0, 100vh);
+    }
+    100% {
+      transform: translate(0, 0vh);
+  }
+}
+
+.versus-text {
+    font-size: 10vh;
+}
+
+.start-button {
+    width: 40vw;
+    height: 20vh;
+    margin: 5vh;
+}
+
+.winner-box {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}

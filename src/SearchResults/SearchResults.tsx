@@ -1,14 +1,14 @@
 import './SearchResults.css'
-import Search from '../SearchForm/SearchForm'
-import { SearchInterface, Artist } from '../Utilities/Interfaces'
+// import { SearchInterface, Artist } from '../Utilities/Interfaces'
 import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
+import { Artist } from '../Utilities/Interfaces'
 
-const SearchResults = ( { searchResults } ) => {
-    console.log(searchResults)
+const SearchResults = (   { searchArray } ) => {
+    console.log(searchArray)
     return (
         <div className="search-results">    
-            {searchResults.map((artist: Artist, index: number) => {
+            {searchArray.map((artist: Artist, index: number) => {
                 return (
                     <Link to={{
                         pathname: '/battle',

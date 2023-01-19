@@ -43,7 +43,7 @@ const Search = () => {
                     Search
                 </button>
             </div>
-            {(!!searchResults.length) && <SearchResults searchResults={searchResults}/>}
+            {(!!searchResults.length) && <SearchResults searchArray={searchResults}/>}
         </div>
     )
 }

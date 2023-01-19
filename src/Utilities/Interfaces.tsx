@@ -1,6 +1,3 @@
-export interface SearchInterface {
-    artist: Artist[];
-}
 
 export interface Artist {
     name:       string;
@@ -13,5 +10,13 @@ export interface Artist {
 
 export interface Image {
     "#text": string;
-    size:    string;
+    size:    Size;
+}
+
+export enum Size {
+    Extralarge = "extralarge",
+    Large = "large",
+    Medium = "medium",
+    Mega = "mega",
+    Small = "small",
 }
