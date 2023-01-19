@@ -1,5 +1,4 @@
 import './SearchResults.css'
-// import { SearchInterface, Artist } from '../Utilities/Interfaces'
 import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
 import { Artist } from '../Utilities/Interfaces'

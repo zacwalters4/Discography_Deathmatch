@@ -19,7 +19,8 @@ const Search = () => {
         getSearchInput('')
     }
 
-    const searchArtist = () => {
+    const searchArtist = (event) => {
+        event.preventDefault()
         getArtists(searchInput)
             .then(data => {
                 getSearchResults(data)
@@ -28,7 +29,7 @@ const Search = () => {
     }
     return (
         <div className="search-container">
-            <div className="search-form">
+            <form className="search-form" onSubmit={searchArtist}>
                 <input
                     className="search-input"
                     type="text"
@@ -37,12 +38,13 @@ const Search = () => {
                     onChange={handleChange}
                 />
                 <button
+                    type="submit"
                     className="search-button"
-                    onClick={searchArtist}
+                    
                 >
                     Search
                 </button>
-            </div>
+            </form>
             {(!!searchResults.length) && <SearchResults searchArray={searchResults}/>}
         </div>
     )
