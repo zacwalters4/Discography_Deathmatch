@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
 import { Artist } from '../Utilities/Interfaces'
 
-const SearchResults = (   { searchArray } ) => {
+const SearchResults = ({ searchArray }) => {
     console.log(searchArray)
     return (
         <div className="search-results">    

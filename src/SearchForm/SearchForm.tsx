@@ -1,15 +1,12 @@
 import React from 'react'
 import './SearchForm.css'
-import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
-import  { getArtists }  from "../Utilities/APICalls"
-import Header from "../Header/Header"
-import SearchResults from '../SearchResults/SearchResults'
+import { useNavigate } from "react-router-dom"
 
 const Search = () => {
 
     const [searchInput, getSearchInput] = React.useState('')
-    const [searchResults, getSearchResults] = React.useState([])
+    const navigate = useNavigate();
     
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearchInput(event.target.value)
@@ -21,10 +18,9 @@ const Search = () => {
 
     const searchArtist = (event) => {
         event.preventDefault()
-        getArtists(searchInput)
-            .then(data => {
-                getSearchResults(data)
-            })
+        navigate({  pathname: '/search',
+                    search: `${formatURL(searchInput)}`
+                })
         clearSearchInput()
     }
     return (
@@ -45,7 +41,6 @@ const Search = () => {
                     Search
                 </button>
             </form>
-            {(!!searchResults.length) && <SearchResults searchArray={searchResults}/>}
         </div>
     )
 }

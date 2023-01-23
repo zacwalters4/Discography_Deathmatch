@@ -15,7 +15,13 @@ const BattlePage = () => {
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
-                getBattleAlbums(data.topalbums.album.splice(0, 10))
+                console.log(data.topalbums.album)
+                if(data.topalbums.album.length > 10) {
+                    getBattleAlbums(data.topalbums.album.splice(0, 10))
+
+                } else {
+                    getBattleAlbums(data.topalbums.album)
+                }
             })
         
     }
@@ -32,10 +38,6 @@ const BattlePage = () => {
         }, 500)
 
         
-    }
-
-    const winRight = () => {
- 
     }
 
     return ( 
