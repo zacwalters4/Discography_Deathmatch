@@ -14,8 +14,7 @@ function Header() {
             {(activePage == '/') &&
                 <button 
                  
-                className="header-button home-button active"
-                >Home</button>}
+                className="header-button home-button active">Home</button>}
             {(activePage !== '/') &&
                 <button 
                  
@@ -24,7 +23,10 @@ function Header() {
             </Link>
             <h1>Discography Deathmatch</h1>
             <Link to={`/collection`}>
-                <button className="header-button collection-button">Collection</button>
+            {(activePage == '/collection') &&
+                <button className="header-button collection-button active">Collection</button>}
+            {(activePage !== '/collection') &&
+                <button className="header-button collection-button">Collection</button>}
             </Link>
         </div>
     )
