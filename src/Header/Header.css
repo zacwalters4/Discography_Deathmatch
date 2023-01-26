@@ -2,9 +2,30 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    background-color: black;
+}
+
+.header-container > h1 {
+    font-size: 1.8em;
 }
 
 .header-button {
     width: 15vw;
-    height: 8vh;
+    height: 10vh;
+    font-size: 1.5em;
+    border: none;
+    background-color: black;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    color: white;
+    font-weight: bold;  
+}
+
+
+.active {
+    color: white;
+    font-weight: bold;  
 }

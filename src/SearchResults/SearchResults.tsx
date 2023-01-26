@@ -4,7 +4,6 @@ import { formatURL } from '../Utilities/Helper'
 import { Artist } from '../Utilities/Interfaces'
 
 const SearchResults = ({ searchArray }) => {
-    console.log(searchArray)
     return (
         <div className="search-results">    
             {searchArray.map((artist: Artist, index: number) => {

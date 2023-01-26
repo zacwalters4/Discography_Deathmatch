@@ -26,7 +26,6 @@ const SearchPage = () => {
 
     return (
         <div className="search-page">
-            <Header />
             <Search />
             
             {(!!searchResults.length) && <SearchResults searchArray={searchResults}/>}

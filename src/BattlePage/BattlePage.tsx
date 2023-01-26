@@ -18,7 +18,6 @@ const BattlePage = () => {
                 console.log(data.topalbums.album)
                 if(data.topalbums.album.length > 10) {
                     getBattleAlbums(data.topalbums.album.splice(0, 10))
-
                 } else {
                     getBattleAlbums(data.topalbums.album)
                 }
@@ -33,6 +32,7 @@ const BattlePage = () => {
     const clickAlbum = (event: MouseEvent) => {
         setDrop(1)
         const name = event.target.name
+
         setTimeout(() => {
             getBattleAlbums(battleAlbums.filter(album=> album["name"] !== name));
         }, 500)
@@ -42,7 +42,6 @@ const BattlePage = () => {
 
     return ( 
         <div className="battle-page">
-            <Header />
             {(battleAlbums.length == 0) &&
             <button 
                 className="start-button"
