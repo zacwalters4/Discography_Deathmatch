@@ -1,6 +1,5 @@
 import React from 'react'
 import './BattlePage.css'
-import Header from '../Header/Header'
 import { useLocation } from "react-router-dom"
 import { formatName } from '../Utilities/Helper'
 import { getAlbums } from '../Utilities/APICalls'
@@ -12,6 +11,7 @@ const BattlePage = () => {
     const artistName = formatName(locationData.search)
     const [drop, setDrop] = React.useState(0)
 
+
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
@@ -21,34 +21,26 @@ const BattlePage = () => {
                 } else {
                     getBattleAlbums(data.topalbums.album)
                 }
-            })
-        
-    }
-    const startMatch = () => {
-        searchAlbums()
-        
+            })   
     }
 
-    const clickAlbum = (event: MouseEvent) => {
+    React.useEffect(() => {
+        searchAlbums()
+      }, [])
+
+    const clickAlbum = (event: { target: HTMLInputElement }) => {
         setDrop(1)
         const name = event.target.name
 
         setTimeout(() => {
             getBattleAlbums(battleAlbums.filter(album=> album["name"] !== name));
         }, 500)
-
-        
     }
 
     return ( 
         <div className="battle-page">
             {(battleAlbums.length == 0) &&
-            <button 
-                className="start-button"
-                onClick={startMatch}
-            >
-                Start!
-            </button>
+            <h1>Loading...</h1>
             }
             {(battleAlbums.length > 1) && 
             <div className="battle-box">
@@ -61,7 +53,12 @@ const BattlePage = () => {
                         onClick={clickAlbum}
                         src={battleAlbums[0]['image'][3]["#text"]}
                     />
-                    <p>{battleAlbums[0]['name']}</p>
+                    <p
+                        className="album-text"
+                    >{battleAlbums[0]['name']}</p>
+                    <p
+                        className="artist-text"
+                    >{battleAlbums[0]['artist']['name']}</p>
                 </div>
                 <p className="versus-text">Vs.</p>
                 <div className="album right"

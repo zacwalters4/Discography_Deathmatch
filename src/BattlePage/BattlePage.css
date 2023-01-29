@@ -15,35 +15,51 @@
 }
 
 .album {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(128, 128, 128, 0.5);
-    box-shadow: 1vh 1vh 1vh rgba(0, 0, 0, 0.7);
+    justify-content: flex-start;
+    background-color: rgba(24,24,24,255);
+    /* box-shadow: 0em 0em 1em rgba(255, 255, 255, 0.500); */
     height: 50vh;
-    width: 30vw;
-
+    width: 40vh;
 }
 
 
 
 .album > img {
     width: 40vh;
-    height: 40vh;
+    aspect-ratio: 1/1;
+
 
 }
 
 .album > p {
     margin: 0;
-    font-size: 5vh;
-    text-align: center;
+    padding-left: 5%;
+    font-size: 2em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.album > p + .album-text {
+    font-weight: bold;
+    width: auto;
+    height: 6vh;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.album > p + .artist-text {
+    font-size: 1em;
+    color: #b3b3b3;
+    height: 4vh;
 }
 
 .album:hover {
     transform: scale(1.2, 1.2);
     cursor: pointer;
-
+    background-color: rgba(40,40,40,255);
 }
 
 .album[drop='1'] {
