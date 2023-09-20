@@ -15,7 +15,7 @@ const BattlePage = () => {
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
-                console.log(data.topalbums.album)
+                // console.log(data.topalbums.album)
                 if(data.topalbums.album.length > 10) {
                     getBattleAlbums(data.topalbums.album.splice(0, 10))
                 } else {
@@ -28,9 +28,11 @@ const BattlePage = () => {
         searchAlbums()
       }, [])
 
-    const clickAlbum = (event: { target: HTMLInputElement }) => {
+    const clickAlbum = (event: React.MouseEvent<HTMLImageElement>) => {
         setDrop(1)
-        const name = event.target.name
+        console.log(event)
+        const target = event.target as HTMLImageElement
+        const name = target.id
 
         setTimeout(() => {
             getBattleAlbums(battleAlbums.filter(album=> album["name"] !== name));
@@ -45,11 +47,11 @@ const BattlePage = () => {
             {(battleAlbums.length > 1) && 
             <div className="battle-box">
                 <div className="album left"
-                    onAnimationEnd={() => setDrop(0)}
-                    drop={drop}
+                    // onAnimationEnd={() => setDrop(0)}
+                    // drop={drop}
                 >
                     <img
-                        name={battleAlbums[1]['name']}
+                        id={battleAlbums[1]['name']}
                         onClick={clickAlbum}
                         src={battleAlbums[0]['image'][3]["#text"]}
                     />
@@ -62,11 +64,11 @@ const BattlePage = () => {
                 </div>
                 <p className="versus-text">Vs.</p>
                 <div className="album right"
-                    onAnimationEnd={() => setDrop(0)}
-                    drop={drop}
+                    // onAnimationEnd={() => setDrop(0)}
+                    // drop={drop}
                 >
                     <img
-                        name={battleAlbums[0]['name']}
+                        id={battleAlbums[0]['name']}
                         onClick={clickAlbum}
                         src={battleAlbums[1]['image'][3]["#text"]}
                     />
@@ -78,7 +80,7 @@ const BattlePage = () => {
                 <h1>WINNER!</h1>
                 <div className="album">
                     <img
-                        name={battleAlbums[0]['name']}
+                        id={battleAlbums[0]['name']}
                         src={battleAlbums[0]['image'][3]["#text"]}
                     />
                     <p>{battleAlbums[0]['name']}</p>
