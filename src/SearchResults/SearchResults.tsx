@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
 import { Artist } from '../Utilities/Interfaces'
 
-const SearchResults = ({ searchArray }) => {
+interface ArtistArray {
+    searchArray: Array<Artist>
+}
+
+const SearchResults = ({ searchArray }: ArtistArray) => {
+    console.log(searchArray)
     return (
         <div className="search-results">    
             {searchArray.map((artist: Artist, index: number) => {
