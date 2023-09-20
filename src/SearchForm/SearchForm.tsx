@@ -35,7 +35,7 @@ const Search = () => {
                 />
                 <button
                     type="submit"
-                    className="search-button"
+                    className="search-button"   
                     
                 >
                     Search
