@@ -16,7 +16,7 @@ const Search = () => {
         getSearchInput('')
     }
 
-    const searchArtist = (event) => {
+    const searchArtist = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         navigate({  pathname: '/search',
                     search: `${formatURL(searchInput)}`
