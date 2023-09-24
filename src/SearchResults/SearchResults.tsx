@@ -12,7 +12,6 @@ const SearchResults = ({ searchArray }: ArtistArray) => {
     return (
         <div className="search-results">    
             {searchArray.map((artist: Artist, index: number) => {
-                console.log(artist)
                 return (
                     <ArtistButton artist={artist} key={index} />
             )

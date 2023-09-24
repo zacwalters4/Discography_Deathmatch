@@ -11,7 +11,7 @@ export const getArtists = (artist: string) => {
                 }
             })
             .then(data => {
-                return data.results.artistmatches.artist.slice(0,10)
+                return data.results.artistmatches.artist.slice(0,3)
             })
     )
 }

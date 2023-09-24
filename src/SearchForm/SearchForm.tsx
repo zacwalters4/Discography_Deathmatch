@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 const SearchForm = () => {
 
     const [searchInput, getSearchInput] = React.useState('')
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearchInput(event.target.value)

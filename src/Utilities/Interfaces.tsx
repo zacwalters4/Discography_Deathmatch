@@ -20,3 +20,7 @@ export enum Size {
     Mega = "mega",
     Small = "small",
 }
+
+export interface ArtistData {
+    artist: Artist
+}
