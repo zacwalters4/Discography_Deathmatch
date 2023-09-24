@@ -13,7 +13,6 @@ const SearchPage = () => {
     const [searchResults, getSearchResults] = React.useState([])
 
     const searchAPI = () => {
-
         getArtists(searchInput)
         .then(data => {
             getSearchResults(data)

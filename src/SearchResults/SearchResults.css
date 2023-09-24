@@ -1,14 +1,17 @@
 .search-results {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
     width: 90vw;
     height: 70vh;
     margin: 5%;
 }
 
-.artist-container {
-    width: 100%;
-    height: 10%;
+.artist-button {
+    width: 20vw;
+    height: 8vh;
     text-align: center;
-    margin: 2%;
+    margin: 2vh;
 }

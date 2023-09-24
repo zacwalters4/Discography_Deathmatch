@@ -3,7 +3,7 @@ import './SearchForm.css'
 import { formatURL } from '../Utilities/Helper'
 import { useNavigate } from "react-router-dom"
 
-const Search = () => {
+const SearchForm = () => {
 
     const [searchInput, getSearchInput] = React.useState('')
     const navigate = useNavigate();
@@ -45,4 +45,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default SearchForm
