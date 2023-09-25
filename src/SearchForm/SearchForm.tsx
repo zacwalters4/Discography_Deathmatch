@@ -26,6 +26,12 @@ const SearchForm = () => {
     return (
         <div className="search-container">
             <form className="search-form" onSubmit={searchArtist}>
+                <button
+                    type="submit"
+                    className="search-button"   
+                >
+                    🔎
+                </button>
                 <input
                     className="search-input"
                     type="text"
@@ -33,13 +39,6 @@ const SearchForm = () => {
                     value={searchInput}
                     onChange={handleChange}
                 />
-                <button
-                    type="submit"
-                    className="search-button"   
-                    
-                >
-                    Search
-                </button>
             </form>
         </div>
     )

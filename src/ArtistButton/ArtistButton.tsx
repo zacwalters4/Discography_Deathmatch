@@ -20,7 +20,6 @@ const ArtistButton = ({ artist } : ArtistData) => {
     const searchAlbums = () => {
         getAlbums(artist.name)
             .then(data => {
-                console.log(data)
                 if(data.topalbums.album.length > 10) {
                     getAlbumCovers(data.topalbums.album.splice(0, 10))
                 } else {

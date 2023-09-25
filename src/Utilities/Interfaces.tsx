@@ -24,3 +24,7 @@ export enum Size {
 export interface ArtistData {
     artist: Artist
 }
+
+export interface ArtistArray {
+    searchArray: Array<Artist>
+}
