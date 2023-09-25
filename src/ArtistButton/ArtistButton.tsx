@@ -29,7 +29,7 @@ const ArtistButton = ({ artist } : ArtistData) => {
     }
     React.useEffect(() => {
         searchAlbums()
-      }, [])
+      }, [artist])
 
     return (
             <div
@@ -43,12 +43,6 @@ const ArtistButton = ({ artist } : ArtistData) => {
                     backgroundImage: `url(${albumCovers[0]['image'][3]['#text']})` 
                 }}
                 >
-                {/* <img
-                    className={'artist-image'}
-                    src={`${albumCovers[0]['image'][3]['#text']}` }
-                >
-                    
-                </img> */}
                 {artist.name}
                 
                 </button>}

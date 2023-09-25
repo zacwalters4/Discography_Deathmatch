@@ -17,10 +17,6 @@
     font-size: 3vh;
 }
 
-/* .search-form:hover {
-    border: solid #242424 3px;
-} */
-
 .search-form:has(.search-input:focus){
     border: solid white 3px;
 }

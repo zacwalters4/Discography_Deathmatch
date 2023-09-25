@@ -14,16 +14,17 @@ const SearchPage = () => {
     const [artistName, getArtistName] = React.useState('')
 
     const searchAPI = () => {
-        getArtistName(searchInput)
         getArtists(searchInput)
         .then(data => {
             getSearchResults(data)
         })
+        getArtistName(searchInput)
     }
 
     React.useEffect(() => {
+        console.log(locationData)
         searchAPI()
-      }, [])
+      }, [locationData])
 
     return (
         <div className="search-page">

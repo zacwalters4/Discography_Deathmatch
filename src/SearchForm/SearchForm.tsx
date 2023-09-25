@@ -18,10 +18,12 @@ const SearchForm = () => {
 
     const searchArtist = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        navigate({  pathname: '/search',
-                    search: `${formatURL(searchInput)}`
-                })
-        clearSearchInput()
+        if(searchInput) {
+            navigate({  pathname: '/search',
+            search: `${formatURL(searchInput)}`
+            })
+            clearSearchInput()
+        }
     }
     return (
         <div className="search-container">
