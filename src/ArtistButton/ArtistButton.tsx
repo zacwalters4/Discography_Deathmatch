@@ -1,8 +1,8 @@
 import React from 'react'
 import './ArtistButton.css'
 import { formatURL } from '../Utilities/Helper'
-import { Artist, ArtistData } from '../Utilities/Interfaces'
-import { Link, useNavigate } from 'react-router-dom'
+import { ArtistData } from '../Utilities/Interfaces'
+import { useNavigate } from 'react-router-dom'
 import { getAlbums } from '../Utilities/APICalls'
 
 const ArtistButton = ({ artist } : ArtistData) => {
@@ -33,16 +33,25 @@ const ArtistButton = ({ artist } : ArtistData) => {
       }, [])
 
     return (
-            <div>
+            <div
+            className={'artist-button-div'}
+            >
                 {(albumCovers.length > 1) &&
                 <button 
                 onClick={clickArtist}
                 className="artist-button"
                 style={{ 
-                    backgroundImage: `url(${albumCovers[0]['image'][0]['#text']})` 
-                }}>
-                
+                    backgroundImage: `url(${albumCovers[0]['image'][3]['#text']})` 
+                }}
+                >
+                {/* <img
+                    className={'artist-image'}
+                    src={`${albumCovers[0]['image'][3]['#text']}` }
+                >
+                    
+                </img> */}
                 {artist.name}
+                
                 </button>}
             </div>
         

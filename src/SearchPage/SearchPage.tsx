@@ -11,8 +11,10 @@ const SearchPage = () => {
     const locationData = useLocation()
     const searchInput = formatName(locationData.search)
     const [searchResults, getSearchResults] = React.useState([])
+    const [artistName, getArtistName] = React.useState('')
 
     const searchAPI = () => {
+        getArtistName(searchInput)
         getArtists(searchInput)
         .then(data => {
             getSearchResults(data)
@@ -27,7 +29,11 @@ const SearchPage = () => {
         <div className="search-page">
             <Search />
             
-            {(!!searchResults.length) && <SearchResults searchArray={searchResults}/>}
+            {(!!searchResults.length) && 
+            <div className="search-results">
+                <h2>Search results for {`"${artistName}"`}</h2> 
+                <SearchResults searchArray={searchResults} />
+            </div>}
         </div>
     )
 }
