@@ -22,7 +22,7 @@
 }
 
 .search-input {
-    width: 30vw;
+    width: 80%;
     background-color: #242424;
     color: white;
     border: none;
@@ -30,7 +30,7 @@
 }
 
 .search-button {
-    width: 10vw;
+    width: 20%;
     height: 100%;
     background-color: #242424;
     border: none;

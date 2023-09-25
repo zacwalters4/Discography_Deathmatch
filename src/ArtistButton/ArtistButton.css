@@ -1,6 +1,7 @@
 
 .artist-button {
     width: 20vw;
+    margin-bottom: 10%;
     aspect-ratio: 3/1;
     text-align: center;
     background-size: cover;

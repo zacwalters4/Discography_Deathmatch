@@ -20,7 +20,6 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: rgba(24,24,24,255);
-    /* box-shadow: 0em 0em 1em rgba(255, 255, 255, 0.500); */
     height: 50vh;
     width: 40vh;
 }
