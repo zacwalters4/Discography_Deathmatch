@@ -9,6 +9,9 @@ const ArtistButton = ({ artist } : ArtistData) => {
 
     const [albumCovers, getAlbumCovers] = React.useState([])
     const navigate = useNavigate()
+    const style = {
+        
+    }
 
     const clickArtist = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
@@ -27,6 +30,17 @@ const ArtistButton = ({ artist } : ArtistData) => {
                 }
             })   
     }
+
+    const getFontSize = () => {
+        console.log(artist.name + artist.name.length)
+        if(artist.name.length <= 12) {
+            return 3
+        } else {
+            return 3 * (12 / artist.name.length)
+        }
+
+    }
+
     React.useEffect(() => {
         searchAlbums()
       }, [artist])
@@ -40,7 +54,8 @@ const ArtistButton = ({ artist } : ArtistData) => {
                 onClick={clickArtist}
                 className="artist-button"
                 style={{ 
-                    backgroundImage: `url(${albumCovers[0]['image'][3]['#text']})` 
+                    backgroundImage: `url(${albumCovers[0]['image'][3]['#text']})`,
+                    fontSize: `${getFontSize()}em` 
                 }}
                 >
                 {artist.name}

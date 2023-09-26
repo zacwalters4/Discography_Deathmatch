@@ -1,5 +1,7 @@
 
 .artist-button {
+    padding-left: 5%;
+    padding-right: 5%;
     width: 20vw;
     margin-bottom: 10%;
     aspect-ratio: 3/1;
@@ -8,15 +10,15 @@
     background-position: center;
     font-weight: bolder;
     color: white;
-    font-size: 2em;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+
+    text-shadow: 0 0 15px #121212, 0 0 15px #121212, 0 0 3px #121212;
     overflow: hidden;
     border-radius: 10px;
     border: none;
     transition: all .2s;
     cursor: pointer;
     background-color: #242424;
+    /* filter: grayscale(.5); */
 }
 
 .artist-button:hover {
