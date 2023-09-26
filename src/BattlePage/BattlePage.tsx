@@ -3,6 +3,7 @@ import './BattlePage.css'
 import { useLocation } from "react-router-dom"
 import { formatName } from '../Utilities/Helper'
 import { getAlbums } from '../Utilities/APICalls'
+import AlbumCard from '../AlbumCard/AlbumCard'
 
 const BattlePage = () => {
 
@@ -15,7 +16,6 @@ const BattlePage = () => {
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
-                // console.log(data)
                 if(data.topalbums.album.length > 10) {
                     getBattleAlbums(data.topalbums.album.splice(0, 10))
                 } else {
@@ -46,9 +46,9 @@ const BattlePage = () => {
             }
             {(battleAlbums.length > 1) && 
             <div className="battle-box">
-                <div className="album left"
-                    // onAnimationEnd={() => setDrop(0)}
-                    // drop={drop}
+                {/* <div className="album left"
+                    onAnimationEnd={() => setDrop(0)}
+                    drop={drop}
                 >
                     <img
                         id={battleAlbums[1]['name']}
@@ -64,8 +64,8 @@ const BattlePage = () => {
                 </div>
                 <p className="versus-text">Vs.</p>
                 <div className="album right"
-                    // onAnimationEnd={() => setDrop(0)}
-                    // drop={drop}
+                    onAnimationEnd={() => setDrop(0)}
+                    drop={drop}
                 >
                     <img
                         id={battleAlbums[0]['name']}
@@ -73,7 +73,8 @@ const BattlePage = () => {
                         src={battleAlbums[1]['image'][3]["#text"]}
                     />
                     <p>{battleAlbums[1]['name']}</p>
-                </div>
+                </div> */}
+                <AlbumCard album={battleAlbums[0]}/>
             </div>}
             {(battleAlbums.length == 1) &&
             <div className="winner-box">
