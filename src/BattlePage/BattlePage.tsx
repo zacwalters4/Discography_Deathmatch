@@ -30,7 +30,6 @@ const BattlePage = () => {
 
     const clickAlbum = (event: React.MouseEvent<HTMLImageElement>) => {
         setDrop(1)
-        console.log(event)
         const target = event.target as HTMLImageElement
         const name = target.id
 

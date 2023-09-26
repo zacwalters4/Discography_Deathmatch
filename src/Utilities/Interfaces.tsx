@@ -28,3 +28,19 @@ export interface ArtistData {
 export interface ArtistArray {
     searchArray: Array<Artist>
 }
+
+export interface Album {
+    name:       string;
+    playcount:  number;
+    url:        string;
+    artist: {
+        name:       string;
+        mbid:       string;
+        url:        string;
+    }
+    image:      Image[];
+}
+
+export interface AlbumData {
+    album: Album
+}

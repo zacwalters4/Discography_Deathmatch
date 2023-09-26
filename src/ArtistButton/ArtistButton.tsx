@@ -32,7 +32,6 @@ const ArtistButton = ({ artist } : ArtistData) => {
     }
 
     const getFontSize = () => {
-        console.log(artist.name + artist.name.length)
         if(artist.name.length <= 12) {
             return 3
         } else {
