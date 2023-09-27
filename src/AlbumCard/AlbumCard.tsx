@@ -8,7 +8,6 @@ import SingleTrack from '../Track/SingleTrack'
 
 const AlbumCard = ({album} : AlbumData) => {
     const [trackList, setTrackList] = React.useState([])
-
     const fetchTrackList = () => {
         getTrackList(album.artist.name, album.name) 
             .then(data => {
@@ -21,7 +20,7 @@ const AlbumCard = ({album} : AlbumData) => {
     }, [])
 
     return (
-        <div className="album-card">
+        <div className="album-card" >
             <div className="album-card-inner">
                 <div className="album-card-front">
                     <img 
@@ -40,7 +39,6 @@ const AlbumCard = ({album} : AlbumData) => {
                                     )})
                             }
                         </div>
-                    
                     <img
                         className="album-image"
                         src={album['image'][3]['#text']}

@@ -93,3 +93,9 @@
     align-items: center;
     margin-top: 5vh;
 }
+
+.album-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

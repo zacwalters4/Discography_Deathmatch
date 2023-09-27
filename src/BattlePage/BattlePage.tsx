@@ -28,14 +28,15 @@ const BattlePage = () => {
         searchAlbums()
       }, [])
 
-    const clickAlbum = (event: React.MouseEvent<HTMLImageElement>) => {
-        setDrop(1)
-        const target = event.target as HTMLImageElement
-        const name = target.id
 
-        setTimeout(() => {
-            getBattleAlbums(battleAlbums.filter(album=> album["name"] !== name));
-        }, 500)
+    const handleAlbumClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        let target = event.currentTarget.id
+        if(target === 'left') {
+            getBattleAlbums(battleAlbums.filter((album, index) => index !== 1 ))
+        } else if(target === 'right') {
+            getBattleAlbums(battleAlbums.filter((album, index) => index !== 0 ))
+        }
     }
 
     return ( 
@@ -45,46 +46,31 @@ const BattlePage = () => {
             }
             {(battleAlbums.length > 1) && 
             <div className="battle-box">
-                {/* <div className="album left"
-                    onAnimationEnd={() => setDrop(0)}
-                    drop={drop}
-                >
-                    <img
-                        id={battleAlbums[1]['name']}
-                        onClick={clickAlbum}
-                        src={battleAlbums[0]['image'][3]["#text"]}
+                <button 
+                    className="album-button"
+                    id="left"
+                    onClick={handleAlbumClick}
+                    >
+                    <AlbumCard 
+                        album={battleAlbums[0]}
                     />
-                    <p
-                        className="album-text"
-                    >{battleAlbums[0]['name']}</p>
-                    <p
-                        className="artist-text"
-                    >{battleAlbums[0]['artist']['name']}</p>
-                </div>
-                <p className="versus-text">Vs.</p>
-                <div className="album right"
-                    onAnimationEnd={() => setDrop(0)}
-                    drop={drop}
-                >
-                    <img
-                        id={battleAlbums[0]['name']}
-                        onClick={clickAlbum}
-                        src={battleAlbums[1]['image'][3]["#text"]}
+                </button>
+                <button 
+                    className="album-button"
+                    id="right"
+                    onClick={handleAlbumClick}
+                    >
+                    <AlbumCard
+                        album={battleAlbums[1]}
                     />
-                    <p>{battleAlbums[1]['name']}</p>
-                </div> */}
-                <AlbumCard album={battleAlbums[0]}/>
+                </button>
             </div>}
             {(battleAlbums.length == 1) &&
             <div className="winner-box">
                 <h1>WINNER!</h1>
-                <div className="album">
-                    <img
-                        id={battleAlbums[0]['name']}
-                        src={battleAlbums[0]['image'][3]["#text"]}
-                    />
-                    <p>{battleAlbums[0]['name']}</p>
-                </div>
+                <AlbumCard 
+                    album={battleAlbums[0]}
+                />
             </div>
             }
         </div>
