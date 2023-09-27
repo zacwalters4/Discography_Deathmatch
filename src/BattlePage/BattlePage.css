@@ -14,57 +14,9 @@
     width: 100vw;
 }
 
-.album {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: rgba(24,24,24,255);
-    height: 50vh;
-    width: 40vh;
-}
-
-
-
-.album > img {
-    width: 40vh;
-    aspect-ratio: 1/1;
-
-
-}
-
-.album > p {
-    margin: 0;
-    padding-left: 5%;
-    font-size: 2em;
-    width: 100%;
-    overflow: hidden;
-}
-
-.album > p + .album-text {
-    font-weight: bold;
-    width: auto;
-    height: 6vh;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.album > p + .artist-text {
-    font-size: 1em;
-    color: #b3b3b3;
-    height: 4vh;
-}
-
-.album:hover {
-    transform: scale(1.2, 1.2);
-    cursor: pointer;
-    background-color: rgba(40,40,40,255);
-}
-
 .album[drop='1'] {
     animation: drop 1s 1;
 }
-
 
 @keyframes drop {
     50% {
@@ -77,12 +29,6 @@
 
 .versus-text {
     font-size: 10vh;
-}
-
-.start-button {
-    width: 40vw;
-    height: 20vh;
-    margin: 5vh;
 }
 
 .winner-box {
