@@ -1,11 +1,25 @@
 import React from 'react'
 import './AlbumCard.css'
 import { formatURL } from '../Utilities/Helper'
-import { AlbumData } from '../Utilities/Interfaces'
+import { AlbumData, Track } from '../Utilities/Interfaces'
 import { useNavigate } from 'react-router-dom'
-import { getAlbums } from '../Utilities/APICalls'
+import { getAlbums, getTrackList } from '../Utilities/APICalls'
+import SingleTrack from '../Track/SingleTrack'
 
 const AlbumCard = ({album} : AlbumData) => {
+    const [trackList, setTrackList] = React.useState([])
+
+    const fetchTrackList = () => {
+        getTrackList(album.artist.name, album.name) 
+            .then(data => {
+                setTrackList(data.album.tracks.track)
+            })
+        }
+    
+    React.useEffect(() =>{
+        fetchTrackList()
+    }, [])
+
     return (
         <div className="album-card">
             <div className="album-card-inner">
@@ -17,7 +31,16 @@ const AlbumCard = ({album} : AlbumData) => {
                     />
                 </div>
                 <div className='album-card-back'>
-                    <h1>hi</h1>
+                        <div className="track-list">
+                            <h2>{album.name}</h2>
+                            {(!!trackList.length) && 
+                                trackList.map((track: Track, index: number) => {
+                                    return (
+                                        <SingleTrack track={track} key={index} />
+                                    )})
+                            }
+                        </div>
+                    
                     <img
                         className="album-image"
                         src={album['image'][3]['#text']}
@@ -30,3 +53,4 @@ const AlbumCard = ({album} : AlbumData) => {
 }
 
 export default AlbumCard
+

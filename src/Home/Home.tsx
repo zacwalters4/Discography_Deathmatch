@@ -20,9 +20,9 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            {/* <SearchForm /> */}
+            <SearchForm />
             
-            {(homeAlbums.length > 1) && 
+            {/* {(homeAlbums.length > 1) && 
             <div className='battle-zone'>
                 <img
                     className='image-left' 
@@ -35,7 +35,7 @@ const Home = () => {
                     alt={`${homeAlbums[1]['name']} cover art`}
                 />
             </div>
-            }
+            } */}
             </div>
         
     )

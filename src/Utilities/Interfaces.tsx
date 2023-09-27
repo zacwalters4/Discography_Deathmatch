@@ -44,3 +44,26 @@ export interface Album {
 export interface AlbumData {
     album: Album
 }
+
+export interface Track {
+    streamable: {
+        fulltrack: string;
+        "#text": string;
+    }
+    duration: number;
+    url: string;
+    name: string;
+    "@attr": {
+        rank: number;
+    }
+    artist: {
+        name:       string;
+        mbid:       string;
+        url:        string;
+    }
+}
+
+export interface TrackData {
+    track: Track
+}
+

@@ -42,4 +42,17 @@ export const getUserAlbums = () => {
     )
 }
 
+export const getTrackList = (artist: string, album: string) => {
+    return (
+        fetch(`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=fcf48a134034bb684aa87d0e0309a0fd&artist=${artist}&album=${album}&format=json`)
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                throw new Error('something went wrong')
+            }
+        })
+    )
+}
+
 
