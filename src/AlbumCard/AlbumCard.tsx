@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import { getAlbums } from '../Utilities/APICalls'
 
 const AlbumCard = ({album} : AlbumData) => {
-    console.log(album)
     return (
         <div className="album-card">
             <div className="album-card-inner">
