@@ -9,4 +9,11 @@ const formatName = (item: string) => {
     return item.slice(1).replaceAll('%', ' ')
 }
 
-export {formatURL, formatName}
+const formatTime = (seconds: number) => {
+    let minutes = Math.floor(seconds / 60)
+    let leftoverSeconds = seconds % 60
+    return `${minutes}:${leftoverSeconds}`
+}
+
+export {formatURL, formatName, formatTime}
+
