@@ -1,0 +1,68 @@
+.album-card {
+    background-color: transparent;
+    width: 20vw;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.album-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+}
+
+.album-card:hover .album-card-inner {
+    transition-delay: 400ms;
+    transform: rotateY(180deg);
+}
+
+.album-card-front, .album-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-size: cover;
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.album-card-back > .album-image {
+    transform: rotateY(180deg);
+    filter: blur(4px);
+    filter: brightness(.6) blur(4px);
+}
+
+.album-card-front {
+    background-color: #242424;
+
+}
+
+.album-card-back {
+    background-color: #242424;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-list {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.track-list > h2 {
+    margin: 0;
+}

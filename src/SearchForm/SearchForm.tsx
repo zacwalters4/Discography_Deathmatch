@@ -1,15 +1,12 @@
 import React from 'react'
 import './SearchForm.css'
-import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
-import  { getArtists }  from "../Utilities/APICalls"
-import Header from "../Header/Header"
-import SearchResults from '../SearchResults/SearchResults'
+import { useNavigate } from "react-router-dom"
 
-const Search = () => {
+const SearchForm = () => {
 
     const [searchInput, getSearchInput] = React.useState('')
-    const [searchResults, getSearchResults] = React.useState([])
+    const navigate = useNavigate()
     
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         getSearchInput(event.target.value)
@@ -19,16 +16,24 @@ const Search = () => {
         getSearchInput('')
     }
 
-    const searchArtist = () => {
-        getArtists(searchInput)
-            .then(data => {
-                getSearchResults(data)
+    const searchArtist = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        if(searchInput) {
+            navigate({  pathname: '/search',
+            search: `${formatURL(searchInput)}`
             })
-        clearSearchInput()
+            clearSearchInput()
+        }
     }
     return (
         <div className="search-container">
-            <div className="search-form">
+            <form className="search-form" onSubmit={searchArtist}>
+                <button
+                    type="submit"
+                    className="search-button"   
+                >
+                    🔎
+                </button>
                 <input
                     className="search-input"
                     type="text"
@@ -36,16 +41,9 @@ const Search = () => {
                     value={searchInput}
                     onChange={handleChange}
                 />
-                <button
-                    className="search-button"
-                    onClick={searchArtist}
-                >
-                    Search
-                </button>
-            </div>
-            {(!!searchResults.length) && <SearchResults searchResults={searchResults}/>}
+            </form>
         </div>
     )
 }
 
-export default Search
+export default SearchForm

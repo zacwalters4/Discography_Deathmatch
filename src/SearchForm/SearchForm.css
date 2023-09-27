@@ -1,17 +1,43 @@
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
 .search-form {
     margin-top: 10vh;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 5vh;
+    border: solid #242424 3px;
+    border-radius: 20px;
+    width: 20vw;
+    overflow: hidden;
+    aspect-ratio: 5/1;
     font-size: 3vh;
 }
 
+.search-form:has(.search-input:focus){
+    border: solid white 3px;
+}
+
 .search-input {
-    width: 30vw;
+    width: 80%;
+    background-color: #242424;
+    color: white;
+    border: none;
+    font-size: x-large;
 }
 
 .search-button {
-    width: 10vw;
+    width: 20%;
     height: 100%;
+    background-color: #242424;
+    border: none;
+    font-size: x-large;
+    filter: grayscale(1);
+}
+
+.search-button:hover {
+    font-size: xx-large;
 }

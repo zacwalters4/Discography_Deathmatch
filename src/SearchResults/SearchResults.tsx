@@ -1,29 +1,16 @@
 import './SearchResults.css'
-import Search from '../SearchForm/SearchForm'
-import { SearchInterface, Artist } from '../Utilities/Interfaces'
-import { Link } from 'react-router-dom'
 import { formatURL } from '../Utilities/Helper'
+import { Artist, ArtistArray } from '../Utilities/Interfaces'
+import ArtistButton from '../ArtistButton/ArtistButton'
 
-const SearchResults = ( { searchResults } ) => {
-    console.log(searchResults)
-    return (
-        <div className="search-results">    
-            {searchResults.map((artist: Artist, index: number) => {
-                return (
-                    <Link to={{
-                        pathname: '/battle',
-                        search: `${formatURL(artist.name)}`
-                        }} 
-                        key={index}>
-                        <div 
-                        className="artist-container" 
-                        >
-                        {artist.name}
-                        </div>
-                    </Link>
-            )
-        })}
-        </div>
+const SearchResults = ({ searchArray }: ArtistArray) => {
+    return (            
+            <div className="search-results-artists">
+                {searchArray.map((artist: Artist, index: number) => {
+                    return (
+                        <ArtistButton artist={artist} key={index} />
+                )})}
+            </div>
     )
 }
 

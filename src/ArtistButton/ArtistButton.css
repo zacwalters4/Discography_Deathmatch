@@ -1,0 +1,36 @@
+
+.artist-button {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 20vw;
+    margin-bottom: 10%;
+    aspect-ratio: 3/1;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0 0 15px #121212, 0 0 15px #121212, 0 0 3px #121212;
+    overflow: hidden;
+    border-radius: 10px;
+    border: none;
+    transition: all .2s;
+    cursor: pointer;
+    background-color: #242424;
+    /* filter: grayscale(.5); */
+}
+
+.artist-button:hover {
+    transform: scale(1.15);
+    transition: all .2s;
+}
+
+.artist-button:active {
+    transform: scale(1.05);
+    transition: all .2s;
+}
+
+.artist-image {
+    margin: 0;
+    padding: 0;
+}

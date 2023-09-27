@@ -1,0 +1,32 @@
+.single-track {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid rgba(255, 255, 255, 0.25) 2px;
+}
+
+.track-name-container {
+    overflow: hidden;
+    width: 80%;
+}
+
+.track-info {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: small;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.track-time {
+    margin-right: 5%;
+    text-align: right;
+}
+
+.track-name {
+    margin-left: 5%;
+}
+

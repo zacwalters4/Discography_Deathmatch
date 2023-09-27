@@ -1,0 +1,53 @@
+.battle-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.battle-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+    margin-top: 10vh;
+    width: 100vw;
+}
+
+.album[drop='1'] {
+    animation: drop 1s 1;
+}
+
+@keyframes drop {
+    50% {
+      transform: translate(0, 100vh);
+    }
+    100% {
+      transform: translate(0, 0vh);
+  }
+}
+
+.versus-text {
+    font-size: 10vh;
+}
+
+.winner-box {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.album-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+.album-button:hover {
+    transform: scale(1.1);
+}

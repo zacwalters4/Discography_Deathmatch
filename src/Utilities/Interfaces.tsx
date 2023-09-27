@@ -1,6 +1,3 @@
-export interface SearchInterface {
-    artist: Artist[];
-}
 
 export interface Artist {
     name:       string;
@@ -13,5 +10,60 @@ export interface Artist {
 
 export interface Image {
     "#text": string;
-    size:    string;
+    size:    Size;
 }
+
+export enum Size {
+    Extralarge = "extralarge",
+    Large = "large",
+    Medium = "medium",
+    Mega = "mega",
+    Small = "small",
+}
+
+export interface ArtistData {
+    artist: Artist
+}
+
+export interface ArtistArray {
+    searchArray: Array<Artist>
+}
+
+export interface Album {
+    name:       string;
+    playcount:  number;
+    url:        string;
+    artist: {
+        name:       string;
+        mbid:       string;
+        url:        string;
+    }
+    image:      Image[];
+}
+
+export interface AlbumData {
+    album: Album
+}
+
+export interface Track {
+    streamable: {
+        fulltrack: string;
+        "#text": string;
+    }
+    duration: number;
+    url: string;
+    name: string;
+    "@attr": {
+        rank: number;
+    }
+    artist: {
+        name:       string;
+        mbid:       string;
+        url:        string;
+    }
+}
+
+export interface TrackData {
+    track: Track
+}
+
