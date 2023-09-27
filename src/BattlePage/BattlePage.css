@@ -44,4 +44,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+.album-button:hover {
+    transform: scale(1.1);
 }

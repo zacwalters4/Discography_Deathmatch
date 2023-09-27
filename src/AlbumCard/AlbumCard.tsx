@@ -17,7 +17,7 @@ const AlbumCard = ({album} : AlbumData) => {
     
     React.useEffect(() =>{
         fetchTrackList()
-    }, [])
+    }, [album])
 
     return (
         <div className="album-card" >

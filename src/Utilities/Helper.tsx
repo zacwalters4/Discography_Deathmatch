@@ -10,9 +10,14 @@ const formatName = (item: string) => {
 }
 
 const formatTime = (seconds: number) => {
-    let minutes = Math.floor(seconds / 60)
-    let leftoverSeconds = seconds % 60
-    return `${minutes}:${leftoverSeconds}`
+    let minutes = (Math.floor(seconds / 60))
+    let leftoverSeconds = (seconds % 60)
+    if(leftoverSeconds < 10) {
+        return `${minutes}:0${leftoverSeconds}`
+    } else {
+        return `${minutes}:${leftoverSeconds}`
+    }
+    
 }
 
 export {formatURL, formatName, formatTime}

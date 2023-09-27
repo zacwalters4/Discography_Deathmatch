@@ -9,9 +9,6 @@ const ArtistButton = ({ artist } : ArtistData) => {
 
     const [albumCovers, getAlbumCovers] = React.useState([])
     const navigate = useNavigate()
-    const style = {
-        
-    }
 
     const clickArtist = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
