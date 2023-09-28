@@ -41,6 +41,9 @@ const BattlePage = () => {
 
     return ( 
         <div className="battle-page">
+            {(battleAlbums.length > 1) && 
+            <h1>{battleAlbums[0]["artist"]["name"]}</h1>
+            }
             {(battleAlbums.length == 0) &&
             <h1>Loading...</h1>
             }
