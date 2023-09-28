@@ -1,23 +1,29 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import './BattlePage.css'
 import { useLocation } from "react-router-dom"
 import { formatName } from '../Utilities/Helper'
 import { getAlbums } from '../Utilities/APICalls'
 import AlbumCard from '../AlbumCard/AlbumCard'
+import { topAlbumsState } from '../Utilities/Interfaces'
 
-const BattlePage = () => {
 
+
+
+
+const BattlePage = ({setTopAlbums}: topAlbumsState) => {
+    console.log(setTopAlbums)
     const [battleAlbums, getBattleAlbums] = React.useState([])
     const locationData = useLocation()
     const artistName = formatName(locationData.search)
     const [drop, setDrop] = React.useState(0)
 
-
+    
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
                 if(data.topalbums.album.length > 10) {
                     getBattleAlbums(data.topalbums.album.splice(0, 10))
+                    console.log(data.topalbums.album[0])
                 } else {
                     getBattleAlbums(data.topalbums.album)
                 }

@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 
 export interface Artist {
     name:       string;
@@ -38,7 +39,7 @@ export interface Album {
         mbid:       string;
         url:        string;
     }
-    image:      Image[];
+    image:  Image[];
 }
 
 export interface AlbumData {
@@ -67,3 +68,6 @@ export interface TrackData {
     track: Track
 }
 
+export interface topAlbumsState {
+    setTopAlbums: Dispatch<SetStateAction<Album[]>>
+}
