@@ -50,12 +50,18 @@
     filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
 }
 
-
-
 .active {
     filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
 }
 
 .trophy-image {
     margin-right: .5vw;
+}
+
+.header-right {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
 }
