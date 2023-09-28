@@ -21,6 +21,7 @@ const Home = () => {
     return (
         <div className="home-page">
             <SearchForm />
+            {/* <SearchForm /> */}
             
             {/* {(homeAlbums.length > 1) && 
             <div className='battle-zone'>

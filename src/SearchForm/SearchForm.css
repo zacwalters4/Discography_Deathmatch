@@ -2,18 +2,17 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    margin-right: .5vw;
 }
 
 .search-form {
-    margin-top: 10vh;
     display: flex;
     justify-content: center;
     border: solid #242424 3px;
     border-radius: 20px;
     width: 20vw;
     overflow: hidden;
-    aspect-ratio: 5/1;
+    aspect-ratio: 6/1;
     font-size: 3vh;
 }
 
@@ -36,8 +35,16 @@
     border: none;
     font-size: x-large;
     filter: grayscale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.search-button:hover {
-    font-size: xx-large;
+.magnifying-glass-image {
+    filter: invert(65%) sepia(0%) saturate(1537%) hue-rotate(254deg) brightness(95%) contrast(89%);
+    width: 40%;
+}
+
+.magnifying-glass-image:hover {
+    filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
 }

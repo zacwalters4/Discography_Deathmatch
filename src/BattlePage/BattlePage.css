@@ -6,6 +6,11 @@
     width: 100vw;
 }
 
+.battle-page > h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
 .battle-box {
     display: flex;
     justify-content: space-evenly;
