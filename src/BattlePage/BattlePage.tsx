@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 import './BattlePage.css'
 import { useLocation } from "react-router-dom"
 import { formatName } from '../Utilities/Helper'
@@ -11,19 +11,18 @@ import { topAlbumsState } from '../Utilities/Interfaces'
 
 
 const BattlePage = ({setTopAlbums}: topAlbumsState) => {
-    console.log(setTopAlbums)
+    // 
     const [battleAlbums, getBattleAlbums] = React.useState([])
     const locationData = useLocation()
     const artistName = formatName(locationData.search)
     const [drop, setDrop] = React.useState(0)
-
+    // let addTopAlbums = setTopAlbums([...battleAlbums[0]])
     
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
                 if(data.topalbums.album.length > 10) {
                     getBattleAlbums(data.topalbums.album.splice(0, 10))
-                    console.log(data.topalbums.album[0])
                 } else {
                     getBattleAlbums(data.topalbums.album)
                 }
@@ -32,8 +31,15 @@ const BattlePage = ({setTopAlbums}: topAlbumsState) => {
 
     React.useEffect(() => {
         searchAlbums()
+        
       }, [])
 
+    React.useEffect(() => {
+        if(battleAlbums.length === 1) {
+            console.log(battleAlbums[0]['name'])
+            setTopAlbums(topAlbums =>[...topAlbums, battleAlbums[0]])
+        }
+      }, [battleAlbums])
 
     const handleAlbumClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
@@ -45,7 +51,7 @@ const BattlePage = ({setTopAlbums}: topAlbumsState) => {
         }
     }
 
-    return ( 
+    return (
         <div className="battle-page">
             {(battleAlbums.length > 1) && 
             <h1>{battleAlbums[0]["artist"]["name"]}</h1>
