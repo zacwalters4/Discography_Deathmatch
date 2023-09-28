@@ -2,6 +2,7 @@ import React from 'react'
 import './SearchForm.css'
 import { formatURL } from '../Utilities/Helper'
 import { useNavigate } from "react-router-dom"
+import magnifyingGlass from '../Icons/magnifying-glass-solid.svg'
 
 const SearchForm = () => {
 
@@ -32,7 +33,12 @@ const SearchForm = () => {
                     type="submit"
                     className="search-button"   
                 >
-                    🔎
+                    <img 
+                        className={"magnifying-glass-image"} 
+                        src={magnifyingGlass}
+                        alt="magnifying-glass"
+                        />
+                       
                 </button>
                 <input
                     className="search-input"

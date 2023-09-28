@@ -36,8 +36,16 @@
     border: none;
     font-size: x-large;
     filter: grayscale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.search-button:hover {
-    font-size: xx-large;
+.magnifying-glass-image {
+    filter: invert(65%) sepia(0%) saturate(1537%) hue-rotate(254deg) brightness(95%) contrast(89%);
+    width: 40%;
+}
+
+.magnifying-glass-image:hover {
+    filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
 }
