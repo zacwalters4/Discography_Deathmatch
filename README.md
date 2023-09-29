@@ -35,6 +35,7 @@ Discography Deathmatch is a TypeScript/React application designed to allow users
 - [Zac Walters](https://github.com/zacwalters4)
 
 ## Preview
+![ddgif](https://github.com/zacwalters4/discography_deathmatch/assets/22826695/9b6887f2-2d66-4002-93ca-3a2df028220b)
 
 
 ## Tech Used
