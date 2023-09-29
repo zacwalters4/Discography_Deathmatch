@@ -10,20 +10,25 @@
 
 ## Abstract
 
-Discography Deathmatch is a TypeScript/React application designed to allow users to pit their favorite artist's albums against eachother to find their favorite album. A user can search for an artist, and is then presented with a battle screen of the artist's top 10 albums . Users can then select their prefered album out of the current 2 displayed, eliminating the other from the contest.
+Discography Deathmatch is a TypeScript/React application designed to allow users to pit their favorite artist's albums against eachother to find their favorite album. A user can search for an artist, and is then presented with a battle screen of the artist's top 10 albums . Users can then select their prefered album out of the current 2 displayed, eliminating the other from the contest. The winning albums are then stored in the collection page.
+
+## To-Do
+1. Improve useability for smaller screen sizes (especially mobile devices)
+2. Improve accessability
+3. E2E Cypress Testing
+4. Animations!
 
 ## Project Goals and Objectives
-- Use the technology you’ve been working with over the course of the module to demonstrate mastery of React, Router, Asynchronous JavaScript, End to end testing with Cypress
-- Work within constraints to deliver a product for your niche audience, which helps solve a problem unique to them.
-- Display the data from the API in a way that applies directly to your audience
+- Develop an application using React, Router, Asynchronous JavaScript, and TypeScript
+- Deliver a product for a niche audience, which helps solve a problem unique to them.
+- Display the data from an API in a way that applies directly to your audience
 - Ability for users to store/manipulate the data displayed in the application, such as favoriting or adding to a list, searching, commenting, etc
 - Multiple views handled by Router
-- Be deployed using Heroku, Surge, or any other similar service
   
 ### Wins & Challenges
 
-- Implemented TypeScript into a modern React web application—from planning to deployment—in one week
-
+- Implemented TypeScript into a modern React web application—from planning to deployment
+- Greatly improved React and TypeScript skills
 
 ## Contributors
 
