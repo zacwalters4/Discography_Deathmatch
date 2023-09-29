@@ -8,7 +8,7 @@
 .collection-trophy {
     filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
     width: 5vw;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
 }
 
 .collection-page > h2 {
