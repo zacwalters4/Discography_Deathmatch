@@ -71,3 +71,7 @@ export interface TrackData {
 export interface topAlbumsState {
     setTopAlbums: Dispatch<SetStateAction<Album[]>>
 }
+
+export interface topAlbumsArray {
+    topAlbums: Album[]
+}

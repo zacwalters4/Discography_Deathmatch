@@ -6,6 +6,7 @@ import SearchPage from "../SearchPage/SearchPage"
 import BattlePage from "../BattlePage/BattlePage"
 import Header from "../Header/Header"
 import { Album } from '../Utilities/Interfaces'
+import Collection from "../Collection/Collection"
 function App() {
 
   const albumArray : Album[] = []
@@ -20,8 +21,10 @@ function App() {
           <Route index element={<SearchPage />} />
           <Route path=":searchName" element={<SearchPage />} />
         </Route>
+        <Route path="/collection" element={<Collection topAlbums={topAlbums} />} />
         <Route path="/battle" element={<BattlePage setTopAlbums={setTopAlbums} />} />
       </Routes>
+
     </div>
   )
 }
