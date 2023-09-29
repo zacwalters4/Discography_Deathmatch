@@ -70,6 +70,7 @@ const BattlePage = ({setTopAlbums}: topAlbumsState) => {
                         album={battleAlbums[0]}
                     />
                 </button>
+                <h2>VS</h2>
                 <button 
                     className="album-button"
                     id="right"
