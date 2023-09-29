@@ -8,6 +8,9 @@ const Collection = ({topAlbums}: topAlbumsArray ) => {
 
     return (
         <div className="collection-page">
+            {(!topAlbums.length) && 
+                <h1>There's nothing here yet..</h1>
+            }
             {topAlbums.map((album: Album, index: number) => {
                 return (
                     <AlbumCard album={album} key={index}/>
