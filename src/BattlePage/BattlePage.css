@@ -14,22 +14,9 @@
 .battle-box {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;    
+    align-items: center;   
     margin-top: 10vh;
     width: 100vw;
-}
-
-.album[drop='1'] {
-    animation: drop 1s 1;
-}
-
-@keyframes drop {
-    50% {
-      transform: translate(0, 100vh);
-    }
-    100% {
-      transform: translate(0, 0vh);
-  }
 }
 
 .versus-text {
@@ -55,4 +42,9 @@
 
 .album-button:hover {
     transform: scale(1.1);
+}
+
+.battle-box > h2 {
+    margin-bottom: 10vh;
+    font-size: 3vw;
 }
