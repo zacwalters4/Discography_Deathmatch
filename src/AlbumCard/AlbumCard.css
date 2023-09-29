@@ -3,6 +3,9 @@
     width: 20vw;
     aspect-ratio: 1/1;
     overflow: hidden;
+    margin-bottom: 10vh;
+    margin-right: 1vw;
+    margin-left: 1vw;
 }
 
 .album-card-inner {
