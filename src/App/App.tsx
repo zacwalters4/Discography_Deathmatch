@@ -1,12 +1,17 @@
-import { useState } from "react"
+import React from "react"
 import './App.css'
 import Home from "../Home/Home"
 import { Routes, Route } from "react-router-dom"
 import SearchPage from "../SearchPage/SearchPage"
 import BattlePage from "../BattlePage/BattlePage"
 import Header from "../Header/Header"
-
+import { Album } from '../Utilities/Interfaces'
+import Collection from "../Collection/Collection"
 function App() {
+
+  const albumArray : Album[] = []
+  const [topAlbums, setTopAlbums] = React.useState(albumArray)
+
   return (
     <div className="App">
       <Header />
@@ -16,8 +21,10 @@ function App() {
           <Route index element={<SearchPage />} />
           <Route path=":searchName" element={<SearchPage />} />
         </Route>
-        <Route path="/battle" element={<BattlePage />} />
+        <Route path="/collection" element={<Collection topAlbums={topAlbums} />} />
+        <Route path="/battle" element={<BattlePage setTopAlbums={setTopAlbums} />} />
       </Routes>
+
     </div>
   )
 }

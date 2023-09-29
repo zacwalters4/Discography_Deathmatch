@@ -1,0 +1,23 @@
+.collection-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collection-trophy {
+    filter: invert(85%) sepia(95%) saturate(2%) hue-rotate(314deg) brightness(105%) contrast(100%);
+    width: 5vw;
+    margin-bottom: 5vh;
+}
+
+.collection-page > h2 {
+    margin: 0;
+}
+
+.winning-albums {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+}

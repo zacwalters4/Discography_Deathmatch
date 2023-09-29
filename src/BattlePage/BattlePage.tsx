@@ -4,15 +4,20 @@ import { useLocation } from "react-router-dom"
 import { formatName } from '../Utilities/Helper'
 import { getAlbums } from '../Utilities/APICalls'
 import AlbumCard from '../AlbumCard/AlbumCard'
+import { topAlbumsState } from '../Utilities/Interfaces'
 
-const BattlePage = () => {
 
+
+
+
+const BattlePage = ({setTopAlbums}: topAlbumsState) => {
+    // 
     const [battleAlbums, getBattleAlbums] = React.useState([])
     const locationData = useLocation()
     const artistName = formatName(locationData.search)
     const [drop, setDrop] = React.useState(0)
-
-
+    // let addTopAlbums = setTopAlbums([...battleAlbums[0]])
+    
     const searchAlbums = () => {
         getAlbums(artistName)
             .then(data => {
@@ -26,8 +31,15 @@ const BattlePage = () => {
 
     React.useEffect(() => {
         searchAlbums()
+        
       }, [])
 
+    React.useEffect(() => {
+        if(battleAlbums.length === 1) {
+            console.log(battleAlbums[0]['name'])
+            setTopAlbums(topAlbums =>[...topAlbums, battleAlbums[0]])
+        }
+      }, [battleAlbums])
 
     const handleAlbumClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
@@ -39,7 +51,7 @@ const BattlePage = () => {
         }
     }
 
-    return ( 
+    return (
         <div className="battle-page">
             {(battleAlbums.length > 1) && 
             <h1>{battleAlbums[0]["artist"]["name"]}</h1>

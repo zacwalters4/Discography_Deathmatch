@@ -1,49 +1,15 @@
-.battle-zone {
-    /* margin-top: 5vh; */
-    width: 100vw;
-    height: 90vh;
-    /* background-color: blue; */
+
+.home-page {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
-.battle-zone > img {
-    width: 20vw;
-    height: 20vw;
-}
-
-.battle-zone > .image-left {
-    margin-right: 15vw;
-    animation: slam-right linear 1.5s 1;
-}
-
-@keyframes slam-right {
-    25% {
-        transform: rotate(45deg);
-    }
-    45% {
-        transform: translate(15vw);
-    }
-    100% {
-        transform: translate(-20vw, 70vh) rotate(-360deg) scale(.5);
-    }
-}
-
-.battle-zone > .image-right {
-    margin-left: 15vw;
-    animation: slam-left linear 1.5s 1;
-}
-
-@keyframes slam-left {
-    25% {
-        transform: rotate(-45deg);
-    }
-    45% {
-        transform: translate(-15vw);
-    }
-    100% {
-        transform: translate(20vw, 70vh) rotate(360deg) scale(.5);
-    }
+.goof-comic {
+    margin-top: 5vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

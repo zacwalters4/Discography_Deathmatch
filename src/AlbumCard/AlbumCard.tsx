@@ -1,10 +1,8 @@
 import React from 'react'
 import './AlbumCard.css'
-import { formatURL } from '../Utilities/Helper'
 import { AlbumData, Track } from '../Utilities/Interfaces'
-import { useNavigate } from 'react-router-dom'
-import { getAlbums, getTrackList } from '../Utilities/APICalls'
-import SingleTrack from '../Track/SingleTrack'
+import { getTrackList } from '../Utilities/APICalls'
+import SingleTrack from '../SingleTrack/SingleTrack'
 
 const AlbumCard = ({album} : AlbumData) => {
     const [trackList, setTrackList] = React.useState([])
