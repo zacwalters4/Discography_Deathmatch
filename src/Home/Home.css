@@ -47,3 +47,18 @@
         transform: translate(20vw, 70vh) rotate(360deg) scale(.5);
     }
 }
+
+.home-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goof-comic {
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
