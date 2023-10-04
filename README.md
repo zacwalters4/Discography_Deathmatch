@@ -51,5 +51,5 @@ Discography Deathmatch is a TypeScript/React application designed to allow users
 ## Project Install
   - Clone this repo to your machine.
   - In the root directory of the project, run `npm install` on the command line.
-  - To start the server, run `npm start`.
-  - To run the test suite, run `npm run cypress` on the command line, and select `e2e` in Google Chrome when prompted by Cypress.
+  - To start the application, run `npm start`.
+
